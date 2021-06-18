@@ -25,15 +25,33 @@ export class GameDataService {
     this.lastAddedGame = this.gameList[this.gameList.length - 1];
   }
 
-  deleteLastGame(){
-    (this.gameList.length === 0) ? this.lastAddedGame = this.gameList.pop() : this.lastAddedGame = {title: '', description: ''};
+  deleteGame(game?: Game, index?: number):void {
+    console.log("The Game removed is: ");
+    console.log(game);
+    console.log("The GameList is now: ");
+    console.log(this.gameList);
+    
+    
+    if(game){
+      this.gameList.splice(this.gameList.indexOf(game),1);
+      if(this.gameList.length){
+        this.lastAddedGame = this.gameList[this.gameList.length - 1];
+      }
+      else{
+        this.lastAddedGame = new Game();
+      }
+    }
 
+    else if(index){
+      this.gameList.splice(index, 1);
+      if(this.gameList.length){
+        this.lastAddedGame = this.gameList[this.gameList.length - 1];
+      }
+      else{
+        this.lastAddedGame = new Game();
+      }
+    }
   }
 
 }
 
-
-// console.log(`Game List:`);
-// console.log(this.gameList);
-// console.log(`Last Added Game:}`);
-// console.log(this.lastAddedGame);

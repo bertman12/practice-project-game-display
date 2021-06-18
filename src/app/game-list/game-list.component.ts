@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { GameDataService } from '../game-data.service';
+import { Game } from '../shared/game-model';
 
 @Component({
   selector: 'app-game-list',
@@ -22,6 +23,10 @@ export class GameListComponent {
     let green  = this.gameData.gameList.length * 50;
     let blue  = 20;
     return `rgb(${red}, ${green}, ${blue})`;
+  }
+
+  onDeleteGame(game:Game){
+    this.gameData.deleteGame(game);
   }
   
 }

@@ -9,7 +9,7 @@
 </ul>
 
 <button 
-    class="btn btn-primary" 
+    class="btn btn-danger" 
     (click) = "onDeleteGame()"
-    [disabled] = "!(gameData.gameList.length !== 0)"
-    >Delete Last Added Game</button>
+    [disabled] = "!(gameData.gameList.length)"
+    >Remove Game From List</button>

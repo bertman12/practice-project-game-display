@@ -12,6 +12,9 @@ export class GameInfoComponent {
   constructor(public readonly gameData: GameDataService) {}
 
   onDeleteGame(){
-    this.gameData.deleteLastGame();
+    this.gameData.deleteGame(this.gameData.gameList[this.gameData.gameList.length - 1]);
+    console.log('The last added game is: ')
+    console.log(this.gameData.lastAddedGame);
+    console.log('====================================');
   }
 }
