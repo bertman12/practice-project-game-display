@@ -1,0 +1,35 @@
+<label for="">List of Available Custom Games</label>
+
+<div class="row">
+    <div class="col-xs-12">
+        <input [(ngModel)] = "title" id = "input-title" type="text" placeholder = "Title">
+        <input [(ngModel)] = "description" id = "input-description" type="text" placeholder = "Description">
+        <button 
+        class="btn btn-primary"
+        [disabled] = "!(title && description)"
+        (click) = "onAddGame()"
+        >Add Game</button>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <h3>List of Games</h3>
+            <div *ngFor = "let gameItem of gameData.gameList" class="col-xs-12">
+                <ul class="list-group">
+                    <li class = "game-item list-group-item"
+                    [ngStyle] = "{color: getColor()}"
+                    >Title: {{ gameItem.title }} <br>Description: {{ gameItem.description }} <br> {{ gameItem.itemNumber }} </li>
+                    <div *ngIf = "gameData.gameList.length > 5" class="col-xs-12">
+                        <p class = "ad">HELLO THIS IS AD, PLEASE GIVE MONEY</p>
+                        <button class="btn btn-danger">DANGER: CLICK NOW!!!!</button>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="col-6">
+            <app-game-info></app-game-info>
+        </div>
+    </div>
+</div>

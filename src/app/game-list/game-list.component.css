@@ -1,0 +1,11 @@
+p.game-item{
+   /* color: black; */
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.ad{
+    background:red;
+    font-family: fantasy;
+}

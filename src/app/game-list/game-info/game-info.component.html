@@ -1,0 +1,15 @@
+
+<h2>New Game Info</h2>
+<ul class="list-group">
+    <li class="list-group-item">
+        Title: {{ gameData.lastAddedGame.title ?? '' }} <br>
+        Description: {{ gameData.lastAddedGame.description ?? '' }} <br>
+        Item Number: {{ gameData.lastAddedGame.itemNumber ?? '' }}
+    </li>
+</ul>
+
+<button 
+    class="btn btn-primary" 
+    (click) = "onDeleteGame()"
+    [disabled] = "!(gameData.gameList.length !== 0)"
+    >Delete Last Added Game</button>
