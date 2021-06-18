@@ -41,16 +41,6 @@ export class GameDataService {
         this.lastAddedGame = new Game();
       }
     }
-
-    else if(index){
-      this.gameList.splice(index, 1);
-      if(this.gameList.length){
-        this.lastAddedGame = this.gameList[this.gameList.length - 1];
-      }
-      else{
-        this.lastAddedGame = new Game();
-      }
-    }
   }
 
 }

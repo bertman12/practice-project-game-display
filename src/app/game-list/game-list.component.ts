@@ -16,11 +16,13 @@ export class GameListComponent {
 
   onAddGame () {
     this.gameData.addGame({title: this.title, description: this.description});
+    this.title = '';
+    this.description = '';
   }
   
   getColor(){
     let red  = 30;
-    let green  = this.gameData.gameList.length * 50;
+    let green  = (this.gameData.gameList.length * 50 < 150) ??  this.gameData.gameList.length * 50;
     let blue  = 20;
     return `rgb(${red}, ${green}, ${blue})`;
   }
